@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "organicadd",
+    "name": "Organic Additions",
+    "description": "Provides additional content for Uncle Genny's Organic Mod Pack",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "George Kazanjian(SoggyMustache)"
+    ],
+    "credits": "Joel, Hjeshed",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
