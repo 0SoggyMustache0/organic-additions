@@ -12,19 +12,30 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
+import net.soggymustache.organicadd.OrganicMain;
 import net.soggymustache.organicadd.common.configuration.OrganicConfig;
 
 import javax.annotation.Nullable;
+import javax.annotation.Resource;
 
 public class EntityBoogerEater extends EntityMob {
 
 	public static final DataParameter<String> MESSAGE = EntityDataManager.createKey(EntityBoogerEater.class, DataSerializers.STRING);
+	public static final ResourceLocation EATER_TABLE = LootTableList.register(new ResourceLocation(OrganicMain.MOD_ID, "loot_tables/entities/booger_eater.json"));
 
 	public EntityBoogerEater(World worldIn) {
 		super(worldIn);
 		this.setSize(0.4F, 1.13F);
+	}
+
+	@Nullable
+	protected ResourceLocation getLootTable()
+	{
+		return EATER_TABLE;
 	}
 
 	@Nullable
