@@ -3,7 +3,10 @@ package net.soggymustache.organicadd;
 import net.minecraft.entity.EntityList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -15,8 +18,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.soggymustache.organicadd.client.render.RenderBoogerEater;
+import net.soggymustache.organicadd.client.render.RenderBubble;
 import net.soggymustache.organicadd.common.OrganicEntities;
 import net.soggymustache.organicadd.common.entity.EntityBoogerEater;
+import net.soggymustache.organicadd.common.entity.EntityBubble;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = OrganicMain.MOD_ID, name = OrganicMain.NAME, version = OrganicMain.VERSION)
@@ -48,6 +53,12 @@ public class OrganicMain {
         @SubscribeEvent
         public static void registerRenders(ModelRegistryEvent e) {
             RenderingRegistry.registerEntityRenderingHandler(EntityBoogerEater.class, RenderBoogerEater::new);
+            RenderingRegistry.registerEntityRenderingHandler(EntityBubble.class, RenderBubble::new);
+        }
+
+        @SubscribeEvent
+        public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+            if (event.getModID().equals(OrganicMain.MOD_ID)) ConfigManager.sync(OrganicMain.MOD_ID, Config.Type.INSTANCE);
         }
     }
 }

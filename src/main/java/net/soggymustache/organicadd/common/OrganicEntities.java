@@ -2,6 +2,7 @@ package net.soggymustache.organicadd.common;
 
 import net.minecraft.entity.Entity;
 import net.soggymustache.organicadd.common.entity.EntityBoogerEater;
+import net.soggymustache.organicadd.common.entity.EntityBubble;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +13,16 @@ public class OrganicEntities {
 
 	static {
 		add(EntityBoogerEater.class, "boogereater", 0x2bfa14, 0xd0dba2);
+		add(EntityBubble.class, "chatbubble");
 
 	}
 
 	private static void add(Class<? extends Entity> entityClass, String entityNameIn, int prim, int sec) {
 		CONTAINERS.add(new EntityContainer(entityClass, entityNameIn.toLowerCase(), prim, sec));
+	}
+
+	private static void add(Class<? extends Entity> entityClass, String entityNameIn) {
+		add(entityClass, entityNameIn.toLowerCase(), -1, -1);
 	}
 
 	public static class EntityContainer {
