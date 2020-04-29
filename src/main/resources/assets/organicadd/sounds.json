@@ -1,0 +1,32 @@
+{
+  "booger.eater.hurt": {
+    "category": "ambient",
+    "subtitle": "organicadd.boogereater.hurt",
+    "sounds": [
+      {
+        "name": "booger.eater.hurt",
+        "stream": true
+      }
+    ]
+  },
+  "booger.eater.idle": {
+    "category": "ambient",
+    "subtitle": "organicadd.boogereater.idle",
+    "sounds": [
+      {
+        "name": "booger.eater.idle",
+        "stream": true
+      }
+    ]
+  },
+  "booger.eater.death": {
+    "category": "ambient",
+    "subtitle": "organicadd.boogereater.death",
+    "sounds": [
+      {
+        "name": "booger.eater.death",
+        "stream": true
+      }
+    ]
+  }
+}

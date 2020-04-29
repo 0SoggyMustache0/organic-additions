@@ -2,6 +2,7 @@ package net.soggymustache.organicadd;
 
 import net.minecraft.entity.EntityList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
@@ -22,6 +23,7 @@ import net.soggymustache.organicadd.client.render.RenderBubble;
 import net.soggymustache.organicadd.common.OrganicEntities;
 import net.soggymustache.organicadd.common.entity.EntityBoogerEater;
 import net.soggymustache.organicadd.common.entity.EntityBubble;
+import net.soggymustache.organicadd.common.sound.OrganicSounds;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = OrganicMain.MOD_ID, name = OrganicMain.NAME, version = OrganicMain.VERSION)
@@ -47,6 +49,11 @@ public class OrganicMain {
                     e.setEgg(new EntityList.EntityEggInfo(r, a.prim, a.sec));
                 registry.register(e);
             });
+        }
+
+        @SubscribeEvent
+        public static void registerSounds(final RegistryEvent.Register<SoundEvent> event) {
+            event.getRegistry().registerAll(OrganicSounds.SOUNDS.toArray(new SoundEvent[0]));
         }
 
         @SideOnly(Side.CLIENT)

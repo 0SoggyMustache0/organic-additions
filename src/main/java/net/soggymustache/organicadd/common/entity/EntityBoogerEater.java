@@ -13,11 +13,13 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.soggymustache.organicadd.OrganicMain;
 import net.soggymustache.organicadd.common.configuration.OrganicConfig;
+import net.soggymustache.organicadd.common.sound.OrganicSounds;
 
 import javax.annotation.Nullable;
 import javax.annotation.Resource;
@@ -36,6 +38,22 @@ public class EntityBoogerEater extends EntityMob {
 	protected ResourceLocation getLootTable()
 	{
 		return EATER_TABLE;
+	}
+
+	@Nullable
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return OrganicSounds.booger_eater_idle;
+	}
+
+	@Override
+	protected SoundEvent getDeathSound() {
+		return OrganicSounds.booger_eater_death;
+	}
+
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+		return OrganicSounds.booger_eater_hurt;
 	}
 
 	@Nullable
