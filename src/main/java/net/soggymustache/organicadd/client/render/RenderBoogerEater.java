@@ -46,7 +46,6 @@ public class RenderBoogerEater extends RenderBiped<EntityBoogerEater> {
 		GlStateManager.popMatrix();
 
 		GlStateManager.pushMatrix();
-//		GlStateManager.rotate(180, 0,1,0);
 		renderText(entity, x, y, z, 1);
 		GlStateManager.popMatrix();
 	}
@@ -59,8 +58,6 @@ public class RenderBoogerEater extends RenderBiped<EntityBoogerEater> {
 		GlStateManager.glNormal3f(0.0F, 0.0F, -0.010416667F);
 		GlStateManager.depthMask(false);
 		fontrenderer.drawSplitString(entity.getMessage(),-40, 0, 100,0);
-//		fontrenderer.drawString(entity.getMessage(),-40, 0, 0);
-//		fontrenderer.drawString(" When?!",-40, 10, 0);
 		GlStateManager.depthMask(true);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 	}
