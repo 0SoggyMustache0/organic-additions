@@ -17,7 +17,7 @@ public class OrganicSounds {
 
 
 	private static SoundEvent registerSound(String s) {
-		ResourceLocation l = new ResourceLocation(OrganicMain.MOD_ID + ":" + s);
+		ResourceLocation l = new ResourceLocation(OrganicMain.MOD_ID, s);
 		SoundEvent event = new SoundEvent(l);
 		event.setRegistryName(l);
 		SOUNDS.add(event);
