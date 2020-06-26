@@ -17,6 +17,7 @@ import net.soggymustache.bookworm.client.animation.lerp.Animation
 import net.soggymustache.bookworm.client.animation.lerp.AnimationHandler
 import net.soggymustache.organicadd.client.AnimationConstants
 import net.soggymustache.organicadd.client.RenderConstants
+import net.soggymustache.organicadd.common.sound.OrganicSounds
 
 class EntityTex(w: World) : EntityAnimal(w){
 
@@ -62,6 +63,9 @@ class EntityTex(w: World) : EntityAnimal(w){
                     val power = state.getValue(BlockRedstoneWire.POWER)
                     if (power in 9..16) {
                         animator.play(power - 9)
+                    }
+                    else if(power < OrganicSounds.TEX_SOUNDS.size){
+                        playSound(OrganicSounds.TEX_SOUNDS[power], 1.0F, 1.0F)
                     }
                 }
             }
