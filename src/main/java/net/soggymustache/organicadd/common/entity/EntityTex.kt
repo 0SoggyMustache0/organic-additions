@@ -64,9 +64,7 @@ class EntityTex(w: World) : EntityAnimal(w){
                     if (power in 9..16) {
                         animator.play(power - 9)
                     }
-                    else if(power < OrganicSounds.TEX_SOUNDS.size){
-                        playSound(OrganicSounds.TEX_SOUNDS[power], 1.0F, 1.0F)
-                    }
+                    playSound(OrganicSounds.TEX_SOUNDS[power], 1.0F, 1.0F)
                 }
             }
         }

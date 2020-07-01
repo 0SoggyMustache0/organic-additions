@@ -26,6 +26,13 @@ public class OrganicSounds {
 	public static SoundEvent tex_sound_7 = registerTexSound("tex.sound.7");
 	public static SoundEvent tex_sound_8 = registerTexSound("tex.sound.8");
 	public static SoundEvent tex_sound_9 = registerTexSound("tex.sound.9");
+	public static SoundEvent tex_sound_10 = registerTexSound("tex.sound.10");
+	public static SoundEvent tex_sound_11 = registerTexSound("tex.sound.11");
+	public static SoundEvent tex_sound_12 = registerTexSound("tex.sound.12");
+	public static SoundEvent tex_sound_13 = registerTexSound("tex.sound.13");
+	public static SoundEvent tex_sound_14 = registerTexSound("tex.sound.14");
+	public static SoundEvent tex_sound_15 = registerTexSound("tex.sound.15");
+
 
 	private static SoundEvent registerSound(String s) {
 		ResourceLocation l = new ResourceLocation(OrganicMain.MOD_ID, s);

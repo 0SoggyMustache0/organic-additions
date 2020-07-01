@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'kotlin'
 
-version = "1.0.2"
+version = "1.0.3"
 group = "net.soggymustache.organicadd"
 archivesBaseName = "organicadd"
 
